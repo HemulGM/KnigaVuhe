@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8CBE04C9-8D04-4C4D-AA21-0D547C115960}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Knigavuhe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\#Fork\HTML-Parser\demo\DemoParser.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\VKAudioPlayer\VKAudioPlayer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\BazaKnig\BazaKnig.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\VK_API\VKComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\FMXVK\Project1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\VKMessage\VKMessageApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Knigavuhe">
+        <MSBuild Projects="Knigavuhe.dproj"/>
+    </Target>
+    <Target Name="Knigavuhe:Clean">
+        <MSBuild Projects="Knigavuhe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Knigavuhe:Make">
+        <MSBuild Projects="Knigavuhe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DemoParser">
+        <MSBuild Projects="..\#Fork\HTML-Parser\demo\DemoParser.dproj"/>
+    </Target>
+    <Target Name="DemoParser:Clean">
+        <MSBuild Projects="..\#Fork\HTML-Parser\demo\DemoParser.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoParser:Make">
+        <MSBuild Projects="..\#Fork\HTML-Parser\demo\DemoParser.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VKAudioPlayer">
+        <MSBuild Projects="..\VKAudioPlayer\VKAudioPlayer.dproj"/>
+    </Target>
+    <Target Name="VKAudioPlayer:Clean">
+        <MSBuild Projects="..\VKAudioPlayer\VKAudioPlayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VKAudioPlayer:Make">
+        <MSBuild Projects="..\VKAudioPlayer\VKAudioPlayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BazaKnig">
+        <MSBuild Projects="..\BazaKnig\BazaKnig.dproj"/>
+    </Target>
+    <Target Name="BazaKnig:Clean">
+        <MSBuild Projects="..\BazaKnig\BazaKnig.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BazaKnig:Make">
+        <MSBuild Projects="..\BazaKnig\BazaKnig.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VKComponents">
+        <MSBuild Projects="..\VK_API\VKComponents.dproj"/>
+    </Target>
+    <Target Name="VKComponents:Clean">
+        <MSBuild Projects="..\VK_API\VKComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VKComponents:Make">
+        <MSBuild Projects="..\VK_API\VKComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="..\FMXVK\Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="..\FMXVK\Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="..\FMXVK\Project1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VKMessageApp">
+        <MSBuild Projects="..\VKMessage\VKMessageApp.dproj"/>
+    </Target>
+    <Target Name="VKMessageApp:Clean">
+        <MSBuild Projects="..\VKMessage\VKMessageApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VKMessageApp:Make">
+        <MSBuild Projects="..\VKMessage\VKMessageApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Knigavuhe;DemoParser;VKAudioPlayer;BazaKnig;VKComponents;Project1;VKMessageApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Knigavuhe:Clean;DemoParser:Clean;VKAudioPlayer:Clean;BazaKnig:Clean;VKComponents:Clean;Project1:Clean;VKMessageApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Knigavuhe:Make;DemoParser:Make;VKAudioPlayer:Make;BazaKnig:Make;VKComponents:Make;Project1:Make;VKMessageApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
